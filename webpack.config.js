@@ -29,7 +29,7 @@ module.exports = [
         mode: 'development', // Fails if this is changed to 'production'. It appears to be linked to dynamic import of notebooks.
         output: {
             // chunkFormat: 'module',
-            filename: 'index_umd.js',
+            filename: 'index-umd.js',
             library: { name: 'NectisHelpScoutGateway', type: 'umd' },
             path: path.resolve(__dirname, 'dist')
         }
