@@ -13,7 +13,7 @@
     "helpscout"
   ],
   "main": "./src/index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "devDependencies": {
     "@nectis/eslint-config-nectis": "^0.1.71",
     "eslint": "^7.30.0",
