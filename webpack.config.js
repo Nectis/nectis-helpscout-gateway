@@ -1,7 +1,7 @@
 /**
  * @author Jonathan Terrell <jonathan.terrell@springbrook.es>
  * @copyright Copyright (c) 2019-2021 Springbrook S.L.
- * @license "Apache-2.0"
+ * @license "MIT"
  */
 
 // Webpack required because rollup does not support dynamic imports with names in variables.
@@ -21,7 +21,7 @@ module.exports = [
             // chunkFormat: 'module',
             filename: 'index.js',
             library: { type: 'module' },
-            path: path.resolve(__dirname, 'dist/webpack')
+            path: path.resolve(__dirname, 'dist')
         }
     },
     {
@@ -30,8 +30,8 @@ module.exports = [
         output: {
             // chunkFormat: 'module',
             filename: 'index.umd.js',
-            library: { name: 'Nectis', type: 'umd' },
-            path: path.resolve(__dirname, 'dist/webpack')
+            library: { name: 'NectisHelpScoutGateway', type: 'umd' },
+            path: path.resolve(__dirname, 'dist')
         }
     }
 ];

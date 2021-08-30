@@ -1,7 +1,7 @@
 /**
  * @author Jonathan Terrell <jonathan.terrell@springbrook.es>
  * @copyright Copyright (c) 2019-2021 Springbrook S.L.
- * @license "Apache-2.0"
+ * @license "MIT"
  */
 
 const webpackConfig = require('./webpack.config');
@@ -35,7 +35,6 @@ module.exports = (grunt) => {
             lint: { args: ['eslint', 'src/**/*.js'], cmd: 'npx' },
             outdated: { args: ['npm', 'outdated'], cmd: 'npx' },
             publish: { args: ['publish'], cmd: 'npx' },
-            rollup: { args: ['rollup', '-c'], cmd: 'npx' },
             test: { args: ['WARNING: No tests implemented.'], cmd: 'echo' },
             update: { args: ['npm-check-updates', '-u'], cmd: 'npx' }
         },
@@ -52,11 +51,11 @@ module.exports = (grunt) => {
 
     // Register local tasks.
     grunt.registerTask('audit', ['run:audit']);
-    grunt.registerTask('build', ['run:rollup']);
+    grunt.registerTask('build', ['webpack']);
     grunt.registerTask('licenseCheck', ['run:licenseChecker', 'run:licenseNLF']);
     grunt.registerTask('lint', ['run:lint']);
     grunt.registerTask('outdated', ['run:outdated']);
-    grunt.registerTask('release', ['webpack', 'run:rollup', 'bump', 'run:publish']);
+    grunt.registerTask('release', ['webpack', 'bump', 'run:publish']);
     grunt.registerTask('test', ['run:test']);
     grunt.registerTask('sync', ['bump']);
     grunt.registerTask('update', ['run:update', 'run:install']);
