@@ -1,0 +1,30 @@
+{
+  "name": "@nectis/nectis-helpscout-gateway",
+  "description": "Nectis HelpScout gateway.",
+  "author": "Jonathan Terrell for Springbrook S.L.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nectis/nectis-helpscout-gateway.git"
+  },
+  "keywords": [
+    "gateway",
+    "nectis",
+    "helpscout"
+  ],
+  "main": "./src/index.js",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@nectis/eslint-config-nectis": "^0.1.71",
+    "eslint": "^7.30.0",
+    "grunt": "^1.4.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-run": "^0.8.1",
+    "grunt-webpack": "^4.0.3",
+    "webpack": "^5.51.1"
+  },
+  "dependencies": {
+    "@observablehq/runtime": "^4.13.0"
+  },
+  "scripts": {}
+}

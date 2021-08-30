@@ -1,2 +1,3 @@
-# nectis-helpscout-gateway
+# Nectis HelpScout Gateway
+
 Nectis HelpScout gateway.

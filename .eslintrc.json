@@ -1,0 +1,30 @@
+{
+    "env": {},
+    "extends": ["@nectis/eslint-config-nectis"],
+    "globals": {},
+    //"overrides": [
+    //    {
+    //        "extends": ["plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking"],
+    //        "files": ["*.ts"],
+    //        "plugins": ["@typescript-eslint"]
+    //    }
+    //],
+    //"parserOptions": {
+    //    "parser": "@typescript-eslint/parser",
+    //    "project": "./tsconfig.json",
+    //    "tsconfigRootDir": "."
+    //},
+    "plugins": [],
+    "root": true,
+    "rules": {
+        "init-declarations": "off"
+        //    "no-shadow": "off",
+        //    "@typescript-eslint/no-shadow": ["error"],
+        //    "no-underscore-dangle": [
+        //        "warn",
+        //        {
+        //            "allow": ["_id", "_inputValue"]
+        //        }
+        //    ]
+    }
+}
