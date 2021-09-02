@@ -1,0 +1,209 @@
+<style>
+    div.navbar-inner {
+        box-shadow: unset;
+        -webkit-box-shadow: unset;
+    }
+    div.container-fluid {
+        border-bottom: 1px solid#eee;
+    }
+
+    section#docsSearch {
+        background: #fff;
+        border-bottom: none;
+    }
+
+    section#main-content {
+        background: unset;
+    }
+    div.contentWrapper {
+        border: none;
+        padding-top: 0;
+    }
+    li#introduction {
+        display: none;
+    }
+    h2#collection-1 {
+        display: none;
+    }
+    /* a#category-10 {
+        background-image: url(https://d2x2losda9vsjs.cloudfront.net/docs/assets/2019/docs-icon-tools.jpg);
+        background-repeat: no-repeat;
+        background-position: center 36px;
+        background-size: 80px 80px;
+        border-radius: 4px;
+        padding-top: 135px;
+    } */
+    div.sort {
+        display: none;
+    }
+
+    input.search-query {
+        box-shadow: unset;
+    }
+
+    aside > h3 {
+        display: none;
+    }
+
+    body.the-component-library aside li:nth-child(1) {
+        border-bottom: 1px solid #eee;
+        text-transform: uppercase;
+    }
+    body.the-component-library aside li:nth-child(5) {
+        border-bottom: 1px solid #eee;
+        text-transform: uppercase;
+    }
+    body.the-component-library aside li:nth-child(14) {
+        border-bottom: 1px solid #eee;
+        text-transform: uppercase;
+    }
+    body.the-component-library aside li:nth-child(15) {
+        border-bottom: 1px solid #eee;
+        text-transform: uppercase;
+    }
+    body.the-component-library aside li:nth-child(19) {
+        border-bottom: 1px solid #eee;
+        text-transform: uppercase;
+    }
+
+    section#main-content {
+        border-left: 1px solid #eee;
+    }
+
+    p.article-count {
+        display: none;
+    }
+
+    a.category {
+        border-radius: 4px;
+    }
+    a#category-43 {
+        display: none;
+    }
+    a#category-54 {
+        display: none;
+    }
+    a#category-55 {
+        display: none;
+    }
+    a#category-44 {
+        display: none;
+    }
+    a#category-56 {
+        display: none;
+    }
+    a#category-57 {
+        display: none;
+    }
+    a#category-46 {
+        display: none;
+    }
+    a#category-73 {
+        display: none;
+    }
+    a#category-74 {
+        display: none;
+    }
+    a#category-98 {
+        display: none;
+    }
+    a#category-99 {
+        display: none;
+    }
+    a#category-100 {
+        display: none;
+    }
+    a#category-101 {
+        display: none;
+    }
+    a#category-102 {
+        display: none;
+    }
+    a#category-108 {
+        display: none;
+    }
+    a#category-109 {
+        display: none;
+    }
+    a#category-110 {
+        display: none;
+    }
+    a#category-111 {
+        display: none;
+    }
+
+    div.articleRatings {
+        box-shadow: unset;
+    }
+</style>
+
+<script src="https://unpkg.com/@nectis/nectis-helpscout-gateway@latest/dist/index-umd.js"></script>
+<script>
+    const categoryMap = new Map([
+        ['data-sources', { pageId: 'the-component-library' }],
+        ['context-models', { pageId: 'the-component-library' }],
+        ['data-depots', { pageId: 'the-component-library' }],
+        ['data-destinations', { pageId: 'the-component-library' }],
+        ['the-component-library', { pageId: 'the-component-library' }],
+        ['usage-kits', { pageId: 'the-component-library' }]
+    ]);
+    (doStuff = () => {
+        if (document.body) {
+            const pathnameSegments = location.pathname.split('/');
+            if (pathnameSegments.length < 3) return;
+            const categorySegments = pathnameSegments[2].split('--');
+            let categoryId = categorySegments[0];
+            categoryId = categoryId.substr(categoryId.indexOf('-') + 1);
+            const category = categoryMap.get(categoryId);
+            if (category) document.body.classList.add(category.pageId);
+            return;
+        }
+        window.requestAnimationFrame(doStuff);
+    })();
+
+    const customScript = () => {
+        const nectisElements = document.querySelectorAll('article p nectis');
+        const nectisElementCount = nectisElements.length;
+        for (let nectisElementIndex = 0; nectisElementIndex < nectisElementCount; nectisElementIndex++) {
+            const nectisElement = nectisElements[nectisElementIndex];
+            const nectisOptions = JSON.parse(nectisElement.innerHTML);
+            const container = document.createElement('div');
+            nectisElement.parentElement.parentElement.replaceChild(container, nectisElement.parentElement);
+            window.NectisHelpScoutGateway.Notebook.load('point-in-time-headcount-chartjs', container);
+        }
+    };
+
+    (() => {
+        if (window.addEventListener) {
+            window.addEventListener('load', customScript, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('onload', customScript);
+        }
+    })();
+</script>
+
+<script type="text/javascript">
+    !(function (e, t, n) {
+        function a() {
+            var e = t.getElementsByTagName('script')[0],
+                n = t.createElement('script');
+            (n.type = 'text/javascript'),
+                (n.async = !0),
+                (n.src = 'https://beacon-v2.helpscout.net'),
+                e.parentNode.insertBefore(n, e);
+        }
+        if (
+            ((e.Beacon = n =
+                function (t, n, a) {
+                    e.Beacon.readyQueue.push({ method: t, options: n, data: a });
+                }),
+            (n.readyQueue = []),
+            'complete' === t.readyState)
+        )
+            return a();
+        e.attachEvent ? e.attachEvent('onload', a) : e.addEventListener('load', a, !1);
+    })(window, document, window.Beacon || function () {});
+</script>
+<script type="text/javascript">
+    window.Beacon('init', '3cf1b981-1e44-4ec9-92b6-527fa8886572');
+</script>
