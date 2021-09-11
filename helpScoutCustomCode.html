@@ -19,11 +19,36 @@
         border: none;
         padding-top: 0;
     }
-    li#introduction {
+    li#introducing-nectis {
+        display: none;
+    }
+    li#more {
         display: none;
     }
     h2#collection-1 {
         display: none;
+    }
+
+    hr.separator {
+        border: 0 solid #e4e4e4;
+        border-top-width: 1px !important;
+        margin: 8px 0 !important;
+    }
+
+    section.collection-category h2 {
+        font-size: 22px;
+    }
+    a.category {
+        border-radius: 4px;
+        /* padding: 12px 15px !important;
+        text-align: left !important; */
+    }
+    /* a.category h3 {
+        border-bottom: 1px solid #eee;
+    } */
+
+    .category-list h3 {
+        font-size: 19px;
     }
     /* a#category-10 {
         background-image: url(https://d2x2losda9vsjs.cloudfront.net/docs/assets/2019/docs-icon-tools.jpg);
@@ -45,95 +70,97 @@
         display: none;
     }
 
-    body.the-component-library aside li:nth-child(1) {
-        border-bottom: 1px solid #eee;
-        text-transform: uppercase;
-    }
-    body.the-component-library aside li:nth-child(5) {
-        border-bottom: 1px solid #eee;
-        text-transform: uppercase;
-    }
-    body.the-component-library aside li:nth-child(14) {
-        border-bottom: 1px solid #eee;
-        text-transform: uppercase;
-    }
-    body.the-component-library aside li:nth-child(15) {
-        border-bottom: 1px solid #eee;
-        text-transform: uppercase;
-    }
-    body.the-component-library aside li:nth-child(19) {
-        border-bottom: 1px solid #eee;
-        text-transform: uppercase;
-    }
-
     section#main-content {
         border-left: 1px solid #eee;
     }
+
+    /* section.category-list h3 {
+        font-size: 18px;
+    } */
 
     p.article-count {
         display: none;
     }
 
-    a.category {
-        border-radius: 4px;
-    }
-    a#category-43 {
-        display: none;
-    }
-    a#category-54 {
-        display: none;
-    }
-    a#category-55 {
-        display: none;
-    }
-    a#category-44 {
-        display: none;
-    }
-    a#category-56 {
-        display: none;
-    }
-    a#category-57 {
-        display: none;
-    }
-    a#category-46 {
-        display: none;
-    }
-    a#category-73 {
-        display: none;
-    }
-    a#category-74 {
-        display: none;
-    }
-    a#category-98 {
-        display: none;
-    }
-    a#category-99 {
-        display: none;
-    }
-    a#category-100 {
-        display: none;
-    }
-    a#category-101 {
-        display: none;
-    }
-    a#category-102 {
-        display: none;
-    }
-    a#category-108 {
-        display: none;
-    }
-    a#category-109 {
-        display: none;
-    }
-    a#category-110 {
-        display: none;
-    }
-    a#category-111 {
-        display: none;
-    }
-
     div.articleRatings {
         box-shadow: unset;
+    }
+
+    .nectis-menu {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .nectis-menu-item {
+        background-color: #fefefe;
+        border: 1px solid #eeeeee;
+        border-radius: 3px;
+        display: block;
+        padding: 12px 15px;
+        /* height: 100%; */
+    }
+
+    .nectis-contents {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .nectis-contents-column {
+        /* list-style-type: none;
+        margin: 0; */
+    }
+    .nectis-contents-column-header {
+        background: #fefefe;
+        border-radius: 4px;
+        border: 1px solid #eeeeee;
+        font-size: 18px;
+        padding: 8px;
+        text-align: center;
+    }
+    .nectis-contents-column-sub-header {
+        border: 0 solid #eeeeee !important;
+        border-bottom-width: 1px !important;
+        font-size: 16px !important;
+        margin: 20px 0 0 0 !important;
+        padding: 8px 0;
+    }
+    .nectis-contents-item {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        margin: 0 !important;
+        padding: 6px 5px;
+    }
+    .nectis-contents-item > span.article {
+        background-image: url(https://nectis.io/images/article.svg);
+        background-size: 20px 20px;
+        border: none !important;
+        border-radius: 0 !important;
+        margin: 0 8px 0 0 !important;
+        padding: 0 !important;
+        height: 20px;
+        width: 20px;
+    }
+    .nectis-contents-item > span.source {
+        border: none !important;
+        border-radius: 0 !important;
+        content: url(https://nectis.io/images/source.svg);
+        margin: 0 8px 0 0 !important;
+        padding: 0 !important;
+        height: 20px;
+        width: 20px;
+    }
+    .nectis-contents-item > span.experimental {
+        border: none !important;
+        border-radius: 0 !important;
+        content: url(https://nectis-content.web.app/experimental.svg);
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 20px;
+        width: 20px;
+    }
+    .nectis-contents-item > a > p {
+        margin: 0 !important;
     }
 </style>
 
@@ -147,7 +174,7 @@
         ['the-component-library', { pageId: 'the-component-library' }],
         ['usage-kits', { pageId: 'the-component-library' }]
     ]);
-    (doStuff = () => {
+    (testBodyElementPresent = () => {
         if (document.body) {
             const pathnameSegments = location.pathname.split('/');
             if (pathnameSegments.length < 3) return;
@@ -158,7 +185,7 @@
             if (category) document.body.classList.add(category.pageId);
             return;
         }
-        window.requestAnimationFrame(doStuff);
+        window.requestAnimationFrame(testBodyElementPresent);
     })();
 
     const customScript = () => {
