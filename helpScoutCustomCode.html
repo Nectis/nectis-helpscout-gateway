@@ -17,7 +17,7 @@
     }
     div.contentWrapper {
         border: none;
-        padding-top: 0;
+        padding: 0 0 45px 0;
     }
     li#introducing-nectis {
         display: none;
@@ -103,7 +103,7 @@
 
     .nectis-contents {
         display: grid;
-        grid-column-gap: 20px;
+        grid-column-gap: 10px;
         grid-template-columns: 1fr 1fr 1fr;
     }
     .nectis-contents-column {
@@ -136,6 +136,24 @@
         background-size: 20px 20px;
         border: none !important;
         border-radius: 0 !important;
+        margin: 0 8px 0 0 !important;
+        padding: 0 !important;
+        height: 20px;
+        width: 20px;
+    }
+    .nectis-contents-item > span.destination {
+        border: none !important;
+        border-radius: 0 !important;
+        content: url(https://nectis.io/images/destination.svg);
+        margin: 0 8px 0 0 !important;
+        padding: 0 !important;
+        height: 20px;
+        width: 20px;
+    }
+    .nectis-contents-item > span.model {
+        border: none !important;
+        border-radius: 0 !important;
+        content: url(https://nectis.io/images/model.svg);
         margin: 0 8px 0 0 !important;
         padding: 0 !important;
         height: 20px;
